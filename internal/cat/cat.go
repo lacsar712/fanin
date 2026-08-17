@@ -1,6 +1,9 @@
 package cat
 
-// Join appends b onto a without copying when cap(a) is large enough.
+// Join returns a new slice with a then b.
 func Join(a, b []int) []int {
-	return append(a, b...)
+	out := make([]int, 0, len(a)+len(b))
+	out = append(out, a...)
+	out = append(out, b...)
+	return out
 }
